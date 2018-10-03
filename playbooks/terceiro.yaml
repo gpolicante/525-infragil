@@ -1,0 +1,31 @@
+---
+
+- name: utilizando listas para todos os modulos 
+  hosts: "{{nome}}"
+  vars:
+   - nome: nome
+  tasks:
+   - name: configurando meu hosts da maquina 
+     blockinfile:
+       path: /etc/hosts
+       block:  |
+        192.168.33.150 devops devops.dexter.com.br
+        192.168.33.151 automation automation.dexter.com.br
+        192.168.33.152 docker docker.dexter.com.br
+        
+   - name: alterando o hostname da maquina 
+     hostname: 
+      name: "{{nome}}".dexter.com.br
+ 
+
+
+
+
+
+
+
+
+
+
+
+

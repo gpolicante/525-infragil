@@ -1,0 +1,5 @@
+
+- name: instalando minha infra de puppet devops 
+  hosts: all 
+  roles:
+   - puppet 

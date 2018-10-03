@@ -1,0 +1,12 @@
+---
+- name: nome da playbook 
+  hosts: all 
+  tasks: 
+   - name: testando se um arquivo existe 
+     command: "test -f /etc/profile.d/dexter" 
+     register: result 
+     ignore_errors: yes 
+
+   - name: configurando uma variavel do sistema 
+     shell: echo "export DEXTER=/opt/dexter > /etc/profile.d/dexter" 
+     when: result.rc == 0 

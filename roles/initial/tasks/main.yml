@@ -1,0 +1,14 @@
+---
+# tasks file for initial
+
+- name: usuarios padroes 
+  include: user.yaml 
+
+
+- name: pacotes para debian
+  include: debian.yaml
+  when: ansible_os_family == "Debian" 
+
+- name: pacotes de centos
+  include: centos.yaml 
+  when: ansible_os_family == "RedHat" 

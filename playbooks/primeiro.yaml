@@ -1,0 +1,61 @@
+---
+
+- name: Minha primeira playbook
+  hosts: all 
+  vars: 
+   - username: sysadmin 
+  tasks: 
+   - name: Adicionando usuario
+     user: 
+      name: "{{username}}" 
+      state: present 
+
+   - name: instalando o vim em todas as maquinas usando magica 
+     package: 
+      name: 
+       - vim
+       - cowsay 
+       - sl 
+       - figlet  
+      state: present
+      update_cache: yes 
+     ignore_errors: yes 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
